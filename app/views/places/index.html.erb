@@ -1,1 +1,9 @@
-<h1>Places I've been</h1> <!-- need to figure out how to make this prettier>
+<h1>Places I've been</h1> <!-- need to figure out how to make this prettier-->
+ 
+ <ul>
+   <% for place in @places %>
+    <li>
+      <%= place["name"] %>
+    </li>
+   <% end %>
+</ul>
