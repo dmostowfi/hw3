@@ -4,6 +4,14 @@ class PlacesController < ApplicationController
         @places = Place.all
     end
 
+    def show
+        @place = Place.find_by({ "id" => params["id"] })
+      end
+
+    def new
+        @place = Place.new
+    end
+
     def create #actually need to check if this is the right approach. not sure if params has the last 2
         @place = Place.new
         @place["name"] = params["place"]["name"]
