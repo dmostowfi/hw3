@@ -12,12 +12,10 @@ class PlacesController < ApplicationController
         @place = Place.new
     end
 
-    def create #actually need to check if this is the right approach. not sure if params has the last 2
+    def create 
         @place = Place.new
         @place["name"] = params["place"]["name"]
-        @place["created_at"] = params["place"]["created_at"]
-        @place["updated_at"] = params["place"]["updated_at"]
-        @post.save
+        @place.save
         redirect_to "/places"
       end
 
