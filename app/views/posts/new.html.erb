@@ -4,6 +4,7 @@
     <%= form.text_field "title" %>
     <%= form.label "description" %>
     <%= form.text_field "description" %>
+    <%= form.hidden_field "place_id" %> <!-- this carries the place_id from the url to the form-->
   </p>
   <%= form.submit %>
 <% end %>
