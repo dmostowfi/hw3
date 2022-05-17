@@ -1,1 +1,8 @@
 <h1><%=@place["name"]%></h1>
+
+
+<!-- creates a link to post about this place-->
+<!-- links to new.html.erb form in posts-->
+<p>
+ <a href = "/posts/new/<%=@place["id"] %>">Add a new post about <%=@place["name"]%></a>
+</p>

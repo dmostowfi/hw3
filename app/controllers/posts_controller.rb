@@ -8,16 +8,13 @@ class PostsController < ApplicationController
         @post = Post.new
     end
 
-    def create #actually need to check if this is the right approach. not sure if params has the last 4
+    def create 
         @post = Post.new
         @post["title"] = params["post"]["title"]
         @post["description"] = params["post"]["description"]
-        @post["posted_on"] = params["post"]["posted_on"]
-        @post["place_id"] = params["post"]["place_id"]
-        @post["created_at"] = params["post"]["created_at"]
-        @post["updated_at"] = params["post"]["updated_at"]
+        @post["place_id"] = Place.find_by({ "id" => params["id"] })
         @post.save
-        redirect_to "/posts"
-      end
+        redirect_to "/places" #Need to figure out how to redirect this back to a specific place 
+    end
 
 end
