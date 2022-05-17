@@ -4,6 +4,10 @@ class PostsController < ApplicationController
         @posts = Post.all
     end
 
+    def new
+        @post = Post.new
+    end
+
     def create #actually need to check if this is the right approach. not sure if params has the last 4
         @post = Post.new
         @post["title"] = params["post"]["title"]
