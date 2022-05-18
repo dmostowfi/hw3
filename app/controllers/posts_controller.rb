@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
 
-    def new #new just displays thef form; create actually performs the logic
+    def new #'new' action just displays the form; whereas 'create' actually performs the logic of creating a record
         @post = Post.new
-        @post["place_id"] = params["place_id"] #params place_id comes from query params in place show page ?place_id=
-        @place = Place.find_by({ "id" => params["place_id"]}) #place_id is the value you're providing to look up in Places table (for new post page)
+        @post["place_id"] = params["place_id"] #for a post, we define place_id, which comes from params["place_id"] comes from the query params (e.g., ?place_id=) at the end of the Place 'show' page 
+        @place = Place.find_by({ "id" => params["place_id"]}) #asking to look up place_id (from params above) in Places table a return in title of 'new' Post page)
     end
 
     def create 
