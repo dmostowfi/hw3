@@ -1,9 +1,13 @@
+<h1>Post about <%=@place["name"]%></h1>
+
 <%= form_with :model => @post do |form| %>
   <p>
     <%= form.label "title" %>
     <%= form.text_field "title" %>
     <%= form.label "description" %>
     <%= form.text_field "description" %>
+    <%= form.label "date" %>
+    <%= form.date_field "posted_on" %>
     <%= form.hidden_field "place_id" %> <!-- this carries the place_id from the url to the form-->
   </p>
   <%= form.submit %>
